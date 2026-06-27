@@ -16,10 +16,10 @@ from fastapi import FastAPI, HTTPException, Header, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
-from livekit import agents, rtc
-from livekit.agents import AgentSession, Agent, JobContext, WorkerOptions, cli
-from livekit.agents.voice import VoicePipelineAgent
-from livekit.plugins import silero
+from livekit import rtc
+from livekit.agents import JobContext, WorkerOptions, cli
+# VoicePipelineAgent not used directly in HTTP mode
+# silero VAD not needed in HTTP mode
 
 # ── ENV ──────────────────────────────────────────────────
 LIVEKIT_URL    = os.environ["LIVEKIT_URL"]
